@@ -4,7 +4,7 @@ import { Product } from '../../models/product';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
-  selector: 'app-all-products',
+  selector: 'app-adminall-products',
   templateUrl: './adminall-products.component.html',
   styleUrls: ['./adminall-products.component.scss']
 })

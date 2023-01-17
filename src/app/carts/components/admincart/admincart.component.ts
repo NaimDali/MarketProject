@@ -3,20 +3,20 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { CartsService } from '../../services/carts.service';
 import {ProductsService} from '../../../products/services/products.service';
 @Component({
-  selector: 'app-cart',
+  selector: 'app-admincart',
   templateUrl: './admincart.component.html',
   styleUrls: ['./admincart.component.scss']
 })
 export class AdminCartComponent implements OnInit {
+  adminform!:FormGroup;
   constructor(private service:CartsService , private build:FormBuilder , private productService:ProductsService) { 
   }
   carts:any[] = [];
   products:any[] = [];
   total = 0
-  form!:FormGroup;
   details:any;
   ngOnInit(): void {
-   this.form = this.build.group({
+   this.adminform = this.build.group({
      start: [''],
      end:['']
    })
@@ -32,7 +32,7 @@ export class AdminCartComponent implements OnInit {
   }
 
   applyFilter() {
-    let date = this.form.value
+    let date = this.adminform.value
     this.service.getAllCarts(date).subscribe((res:any) => {
       this.carts = res
     })

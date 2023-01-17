@@ -25,6 +25,7 @@ export class AllProductsComponent implements OnInit {
     this.service.getAllProducts().subscribe((res:any) => {
       this.products = res
       this.loading = false
+
      } , error => {
       this.loading = false
       alert( error)

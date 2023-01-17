@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CartComponent } from './components/cart/cart.component';
 import { SharedModule } from '../shared/shared.module';
 import { AdminCartComponent } from './components/admincart/admincart.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import { AdminCartComponent } from './components/admincart/admincart.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class CartsModule { }
