@@ -7,7 +7,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class SelectComponent implements OnInit {
   @Input() title:string = ""
-  @Input() data:any[] = []
+  @Input() data:any[] = [];
+  @Input() select = ''
+  @Input() all:boolean = true;
+
   @Output() selectedValue = new EventEmitter()
   constructor() { }
 
