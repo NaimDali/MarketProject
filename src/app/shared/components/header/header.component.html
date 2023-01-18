@@ -1,12 +1,15 @@
-
 <nav>
-    <div class="container">
-        <div class="content">
-            <h2 class="logo" >Market</h2>
-            <ul>
-                <li routerLink="/products"> Products</li>
-                <li routerLink="/cart" > Cart</li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="content">
+      <h2 class="logo">Market</h2>
+      <ul *ngIf="!isAdmin">
+        <li routerLink="/products">Products</li>
+        <li routerLink="/cart">Cart</li>
+      </ul>
+      <ul *ngIf="isAdmin">
+        <li routerLink="/adminproducts">Products</li>
+        <li routerLink="/admincart">Cart</li>
+      </ul>
     </div>
+  </div>
 </nav>

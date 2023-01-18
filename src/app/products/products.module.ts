@@ -9,8 +9,8 @@ import { AdminProductComponent } from './components/adminproduct/adminproduct.co
 import { AdminProductsDetailsComponent } from './components/adminproducts-details/adminproducts-details.component';
 import { AdminAllProductsComponent } from './components/adminall-products/adminall-products.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { ModalComponent } from '../modal/modal.component';
+import { ModalModule } from '../modal/modal.module';
 
 @NgModule({
   declarations: [
@@ -19,12 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductComponent,
     AdminAllProductsComponent,
     AdminProductsDetailsComponent,
-    AdminProductComponent
+    AdminProductComponent,
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    ReactiveFormsModule
-  ]
+  imports: [CommonModule, SharedModule, ReactiveFormsModule, ModalModule],
 })
-export class ProductsModule { }
+export class ProductsModule {}

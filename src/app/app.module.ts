@@ -6,19 +6,19 @@ import { AppComponent } from './app.component';
 import { CartsModule } from './carts/carts.module';
 import { ProductsModule } from './products/products.module';
 import { SharedModule } from './shared/shared.module';
+import { ShowModalDirective } from './show-modal.directive';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProductsModule,
     CartsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
