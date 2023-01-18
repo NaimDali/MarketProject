@@ -22,16 +22,18 @@
         <td><img src="{{ item.image }}" alt="" /></td>
         <td>{{ item.title }}</td>
         <td>{{ item.category }}</td>
-        <td>{{ item.price }} L.E</td>
+        <td>{{ item.price }} $</td>
         <td>
           <button
             class="btn btn-warning"
             data-toggle="modal"
             data-target="#viewCart"
-            (click)="updateModalAction()"
+            (click)="updateModalAction(i+1)"
           >
             Update
           </button>
+        </td>
+        <td>
           <button
             class="btn btn-primary"
             data-toggle="modal"
@@ -124,7 +126,7 @@
       class="close"
       data-dismiss="modal"
       aria-label="Close"
-      (click)="updateModalAction()"
+      (click)="closeModalAction()"
     >
       <span aria-hidden="true">&times;</span>
     </button>
@@ -133,6 +135,7 @@
         <div class="col-md-4 col-sm-12">
           <label for="">Update product</label>
           <input
+          [ngModel]="item?.title"
             type="text"
             formControlName="title"
             class="form-control"
@@ -142,6 +145,7 @@
         <div class="col-md-4 col-sm-12">
           <label for="">Price</label>
           <input
+            [ngModel]="item?.price"
             type="number"
             formControlName="price"
             class="form-control"
@@ -159,7 +163,7 @@
         </div>
         <div class="col-md-4 col-sm-12">
           <label for="image">Image</label>
-          <img src="{{ base64 }}" alt="" />
+          <img   src="{{ base64 }}" alt="" />
           <input
             type="file"
             class="form-control"
@@ -169,6 +173,8 @@
         <div class="col-md-8 col-sm-12">
           <label for="image">Description</label>
           <textarea
+          [ngModel]="item?.description"
+            value="item?.description"
             class="form-control"
             formControlName="description"
             placeholder="type here .. "
@@ -178,7 +184,6 @@
       <div class="d-flex justify-content-end mt-3">
         <button
           class="btn btn-success"
-          [disabled]="!form.valid"
           (click)="addProduct()"
         >
           Update Product

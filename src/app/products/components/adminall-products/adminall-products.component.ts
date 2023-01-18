@@ -9,6 +9,7 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./adminall-products.component.scss'],
 })
 export class AdminAllProductsComponent implements OnInit {
+  item: Product | undefined;
   updateModal: boolean = false;
   addModal: boolean = false;
   products: Product[] = [];
@@ -29,8 +30,13 @@ export class AdminAllProductsComponent implements OnInit {
     this.getProducts();
     this.getCategories();
   }
-  updateModalAction() {
+  closeModalAction() {
+    this.updateModal = false;
+  }
+  updateModalAction(id:any) {
     this.updateModal = !this.updateModal;
+    this.item = this.products.find((ell)=>ell.id == id);
+    
   }
   addModalAction() {
     this.addModal = !this.addModal;
